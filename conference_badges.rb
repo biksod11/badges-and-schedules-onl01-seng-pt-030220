@@ -1,20 +1,18 @@
 # Write your code here.
+attendees = ["Edsger", "Ada", "Charles", "Alan", "Grace", "Linus", "Matz"]
+
 def badge_maker(name)
   "Hello, my name is #{name}."
 end
 
-def batch_badge_creator(list)
-  arr = []
-  list.each do |message| arr << badge_maker(message)
+def batch_badge_creator(attendees)
+  attendees.map do |attendee|
+    "Hello, my name is #{attendee}"
   end
-  arr
 end
 
-def assign_rooms(speaker)
-  rooms = []
-  counter = 1
-  speaker.each do |assignment| rooms << "Hello, #{speaker}! You'll be assigned to room #{counter}."
-    counter += 1
+def assign_rooms(attendees)
+  speaker.each_with_index.map do |attendee, index|
+    "Hello, #{speaker}! You'll be assigned to room #{index+1}."
   end
-  rooms
 end
